@@ -1,0 +1,28 @@
+/* Popup.css */
+.welcome{
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: wheat;
+    z-index: 1000;
+    text-align: center;
+    width: 80%;
+  }
+  
+  .welcome button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color:#E34B00;
+    color:#710100 ;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  h1{
+    color: #710100;
+  }
+  

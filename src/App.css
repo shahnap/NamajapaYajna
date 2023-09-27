@@ -1,38 +1,643 @@
+body,
+ul,
+li,
+button {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+ul {
+  padding: 0;
+  margin-left: -2rem;
+}
+li {
+  background-color: #fff;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .App {
   text-align: center;
+  background-color: #200101;
+  width: 100%;
+  padding-top: 1px;
+  background-image: url(./Components/images/logo5.png);
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden; 
+  position: fixed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* .board {
+  display: flex;
+  background-color: #E34B00;
+  border: 1px solid #D15400;
+  border-radius: 8px;
+  margin: 10px; 
+  
+} */
+.heading {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 15px;
+  
+}
+.heading2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 15px;
+  
+}
+.first{
+  color:#990100 ;
+  font-weight: bolder;
+}
+.second{
+  color:#19202C;
+  font-weight: bolder;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* .logo {
+  display: block;
+  height: 65px;
+  margin: 0 auto;
+  margin-left: 0%;
+} */
+.board {
+  background-color: #E34B00;
+  border: 1px solid #D15400;
+  border-radius: 8px;
+  margin: 10px ; /* Center the .board horizontally */
+  text-align: center; /* Center-align the text */
+  position: relative; /* Add this line */
+  padding: 10px; /* Add some padding to the .board element */
+  
+}
+
+.logo {
+  display: block;
+  height: 65px;
+  position:absolute; 
+  top: 10px;
+  left: 8px;
+  
+  
+  
+}
+.logo2 {
+  display: block;
+  height:35px;
+  position:absolute; 
+  top: 20px;
+  right: 8px; 
+
+  
+}
+/* Styles for the .logo element */
+/* .logo {
+  display: block;
+  height: 45px;
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  background-color: #200101;
+  border-radius: 4px;
+  animation: vibrate 0.3s infinite alternate;
+}
+
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(-2px); 
+  }
+  100% {
+    transform: translateX(2px); 
+  }
+} */
+
+.current-date {
+  /* display: inline-flex;
+  justify-content:space-around; 
+  align-items: center; */
+  color: wheat;
+  
+}
+.speaker-icon {
+  /* cursor: pointer; */
+  /* margin-right: auto; */
+  /* margin-left: 10px; */
+  /* position: relative; */
+  /* left: 10px!important; */
+
+  
+  
+  
+  
+  /* top: 80px; */
+}
+
+.list-container {
+  max-height: 600px !important;
+  overflow-y: auto;
+  margin-top: 28px;
+  text-align: left;
+  margin-left: 20px;
+  color: #B8887C;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  position: relative;
+  top: -30px;
+}
+.ListView {
+  text-align: center;
+}
+.message {
+  background-color: rgba(209, 84, 0, 0.5); 
+  padding: 8px;
+  border-radius: 8px;
+  margin: 4px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 12px;
+  margin-top: 10px;
+}
+.last-entered-text {
+  font-weight: bolder; 
+}
+.list-item-number {
+  font-weight: bolder;
+  margin-right: 5px;
+  color: #D2BEB3;
+}
+.list-item-text {
+  color: #D2BEB3; 
+  font-size: 15px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.message-time {
+  color: #ab8976;
+  margin-left: auto; 
+}
+.list-container::-webkit-scrollbar {
+  width: 8px;
+}.list-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+.list-container::-webkit-scrollbar-track {
+  background-color: #f8f8f8;
+}
+.list-container::-webkit-scrollbar-button {
+  display: none;
+}
+.text-count {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #D2BEB3; 
+  background-color: #D15400 ;
+  border-radius: 4px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.count-text {
+  color: wheat;
+  
+  height: 30px;
+  font-size: 100px;
+}
+.error-alert {
+  background-color:transparent  !important;
+  background-size: 2px 2px !important;
+  border: transparent !important;
+  border-radius: 5px; 
+  color: #ff0000 !important;
+  font-weight: bold;
+  font-size: 12px !important;
+  left: 10px !important;
+}
+
+
+.count-text {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: wheat;
+  background-color:  #200101 !important;
+  border-radius: 4px;
+  text-align: center; 
+  position: fixed;
+  bottom: 55px;
+  left: 0;
+  right: 0;
+  z-index: 1; 
+}
+
+
+.data-entering-space {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
+}form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button[type="submit"] {
+  margin-top: 10px;
+}
+.input-container {
+  position: relative;
+}
+
+.error-message {
+  position: absolute;
+  bottom: -23px; 
+  left: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.data-entering-space input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+}
+.input-container{
+  width: 100%;
+}
+.data-entering-space button[type="button"] {
+  background-color: #D15400;
+  color:#710100;
+  border: none;
+  border-radius: 45%;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+audio {
+  display: none;
+}
+/* Add this CSS to your App.css or a separate CSS file */
+
+/* Style the tooltip container */
+.tooltip {
+  display: inline-block;
+  cursor: pointer;
+  position: relative; /* Add this to make sure the tooltip is relative to the container */
+}
+
+/* Style the tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 100%; /* Position below the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* Show the tooltip text when you hover over the container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.tooltiptext{
+  
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px;
+  position: absolute;
+  font-size: 10px;
+  
+  top: 80px; 
+ right: 0;
+ 
+}
+.tooltiptext2{
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px;
+  position: absolute;
+  font-size: 10px;
+  bottom: 45px;
+  right: 30px;
+}
+.tooltiptext3{
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px;
+  position: absolute;
+  font-size: 10px;
+  left:170px;
+}
+.tooltiptext4{
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px;
+  position: absolute;
+ bottom: 35px;
+ left: 30px;
+ font-size: 10px;
+}
+
+@media (min-width: 1500px) {
+  .data-entering-space {
+    width: 100%;
+    
+    display: flex; /* Optional: Align the input field horizontally */
+    justify-content: center; /* Optional: Center the input field horizontally */
+  }
+
+  .input-container {
+    max-width: 1500px; /* Limit the input container's maximum width on desktop */
+    width: 100%;
+    
+  }
+  .input-field{
+    width: 100%;
+  }
+  .logo {
+    display: block;
+    height: 65px;
+    position:absolute; 
+    top: 20px;
+    left: 8px;
+    
+    
+    
+  }
+  .logo2 {
+    display: block;
+    height:45px;
+    position:absolute; 
+    top: 30px;
+    right: 8px; 
+  
+    
+  }
+  .board {
+    height:110px;  
+  }
+  .share-options {
+    
+    width: 30% !important;
+    margin-left: 35% !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  form {
+    flex-direction: column;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+  li {
+    margin: 5px 0;
+  }
+
+}
+@media (max-width: 768px) {
+  button[type="button"] {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .some-element {
+    max-height: 690px;
+  }
+}
+@media (max-width: 768px) {
+  .board {
+    height:83px;  
+  }
+
+  .heading {
+    font-size: 4px;
+  }
+  .heading2 {
+    font-size: 2px;
+  }
+
+  .first,
+  .second {
+    font-size: 1.3rem;
+  }
+  .tooltiptext{
+  
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px;
+    position: absolute;
+    font-size: 10px;
+    
+    top: 60px; 
+   right: 0;
+   visibility: hidden;
+   
+  }
+  .tooltiptext2{
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px;
+    position: absolute;
+    font-size: 10px;
+    bottom: 45px;
+    right: 30px;
+    visibility: hidden;
+  }
+  .tooltiptext3{
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px;
+    position: absolute;
+    font-size: 10px;
+    left:170px;
+    visibility: hidden;
+  }
+  .tooltiptext4{
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px;
+    position: absolute;
+   bottom: 35px;
+   left: 30px;
+   font-size: 10px;
+   visibility: hidden;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .count-text {
+    font-size: 12px; 
+    bottom: 65px; 
+  }
+}
+@media (max-width: 768px) {
+  .list-container {
+    max-height: calc(100vh - 150px); /* Adjust the max height for smaller screens */
+    /* margin-left: 10px; Adjust margin for smaller screens */
+  }
+}
+@media (max-width: 768px) {
+  .board {
+    margin: 10px ; /* Center the board horizontally on smaller screens */
+  }
+
+  
+
+  .first,
+  .second {
+    font-size: 1.3rem; /* Decrease font size for smaller screens */
+  }
+
+  .count-text {
+    font-size: 12px; /* Decrease font size for smaller screens */
+    bottom: 65px; /* Adjust the position of the text count on smaller screens */
+  }
+
+  .list-container {
+    max-height: calc(100vh - 150px); /* Adjust the max height for smaller screens */
+    /* Adjust margin or padding as needed for smaller screens */
+  }
+}
+
+.input-container2{
+  visibility: hidden !important;
+}
+.btn3{
+  visibility: hidden !important;
+}
+.data-entering-space2{
+  visibility: hidden;
+}
+.count-text2{
+  visibility: hidden;
+}
+
+
+
+.btn5,.btn6,.btn7,.btn8{
+ /* background-color: #200101; */
+}
+
+
+/* Style the container for the icons */
+/* Style the container for the icons using CSS grid */
+/* Add this CSS to your existing styles */
+
+/* Style the container for the icons */
+/* Style the container for the icons */
+
+.share-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+  grid-gap: -5px; /* Adjust the gap as needed */
+  background-color: white; /* Set the background color to gray */
+  padding: 10px; /* Add padding to the container */
+  border-radius: 10px;
+  width: 70%;
+  margin-left: 17%;
+  position: absolute;
+  bottom: 350px; /* Initially hidden below the screen */
+  transition: transform 0.8s ease-in-out; /* Add a smooth transition to transform */
+}
+
+/* Style individual icon boxes */
+.icon-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style individual icons */
+.card {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn5,
+.btn6,
+.btn7,
+.btn8 {
+  /* Your icon image styles here */
+}
+
+/* Show the share options when the Share button is clicked */
+.show-share-options .share-options {
+  transform: translateY(-300px); /* Move the options up */
 }
